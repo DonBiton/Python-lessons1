@@ -1,13 +1,14 @@
-#1
-def find_angle(x,y,z):
+# 1
+def find_angle(x, y, z):
     (x1, x2) = x
-    (y1,y2) = y
+    (y1, y2) = y
     (z1, z2) = z
     tan_X = x2 / x1 if x1 != 0 else float('inf')
     tan_Y = y2 / y1 if y1 != 0 else float('inf')
     tan_Z = z2 / z1 if z1 != 0 else float('inf')
-    
-    if tan_X == tan_Y ==  tan_Z: return X, Y, Z
+
+    if tan_X == tan_Y == tan_Z:
+        return X, Y, Z
     if tan_X <= tan_Y and tan_X <= tan_Z:
         if tan_X == tan_Y:
             return X, Y
@@ -41,9 +42,7 @@ Z = input_point("Z")
 print(f"Точка с минимальным углом: {find_angle(X, Y, Z)}")
 
 
-
-
-#2
+# 2
 def simle(num):
     if num < 2:
         return False
@@ -51,14 +50,18 @@ def simle(num):
         if num % i == 0:
             return False
     return True
+
+
 def bin_palindrom(n):
     bin_palindroms = []
     for i in range(n):
         bin_i = bin(i)[2:]
         if simle(i) and bin_i == bin_i[::-1]:
-            s = str(i) +' = '+ bin_i
+            s = str(i) + ' = ' + bin_i
             bin_palindroms.append(s)
     return bin_palindroms
+
+
 n = input('Введите число n: ')
 if not (n.isdigit()):
     print('Ошибка, вводи числа')
