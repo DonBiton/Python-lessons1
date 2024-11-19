@@ -37,7 +37,8 @@ df = pd.DataFrame({
     'col1': [1, 2, 3, 4],
     'col2': [3, 4, 5, 6]
 })
-
+# print(np.unique(df[['col1', 'col2']].values)) #  не то, но полезное
+print(df[df != df.loc[df['col1'].isin(df['col2']),'col1'].values].dropna())
 unique_col1 = df['col1'][~df['col1'].isin(df['col2'])]
 unique_col2 = df['col2'][~df['col2'].isin(df['col1'])]
 print("Не пересекающиеся элементы в столбце 'col1':")
@@ -46,7 +47,7 @@ print("Не пересекающиеся элементы в столбце 'col
 print(unique_col2)
 
 # 3
-data_series = pd.Series([1, 2, 2, 3, 3, 3, 4, 4, 4, 4])
+data_series = pd.Series([1, 2, 2, 3, 3, 3, 4, 4, 4, 4,4])
 frequency = data_series.value_counts()
 print("Частота уникальных элементов в Series:")
 print(frequency)
