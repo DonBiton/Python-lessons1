@@ -1,9 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
-def f(x, alpha, beta):
-    a = alpha
-    b = beta
-    return (x**b)
+def f(x):
+   
+    return 2*x**2-4*x*y
 fig = plt.figure(dpi=200)
 plt.title("Исследование заданной функции - 2")
 ax = fig.add_subplot()
